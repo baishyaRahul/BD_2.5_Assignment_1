@@ -245,8 +245,7 @@ function sortProductsByPriceHighToLow(product1, product2) {
   return product2.price - product1.price;
 }
 app.get('/products/sort/price-high-to-low', (req, res) => {
-  let sortedProducts = products.slice();
-  sortedProducts.sort(sortProductsByPriceHighToLow);
+  let sortedProducts = products.sort(sortProductsByPriceHighToLow);
   res.json({ products: sortedProducts });
 });
 
@@ -255,8 +254,7 @@ function sortProductsByPriceLowToHigh(product1, product2) {
   return product1.price - product2.price;
 }
 app.get('/products/sort/price-low-to-high', (req, res) => {
-  let sortedProducts = products.slice();
-  sortedProducts.sort(sortProductsByPriceLowToHigh);
+  let sortedProducts = products.sort(sortProductsByPriceLowToHigh);
   res.json({ products: sortedProducts });
 });
 
