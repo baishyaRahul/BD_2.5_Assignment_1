@@ -318,7 +318,7 @@ function getProducts() {
 }
 app.get('/products', (req, res) => {
   let products = getProducts();
-  res.json(products);
+  res.json({ products: products });
 });
 
 app.listen(port, () => {
