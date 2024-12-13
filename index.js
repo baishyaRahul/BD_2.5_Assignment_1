@@ -238,7 +238,7 @@ function sortProductsByPopularity(product1, product2) {
 app.get('/products/sort/popularity', (req, res) => {
   let sortedProducts = products.slice();
   sortedProducts.sort(sortProductsByPopularity);
-  res.json(sortedProducts);
+  res.json({ products: sortedProducts });
 });
 
 // Endpoint 2: Get the products sorted by “high-to-low” price
@@ -248,7 +248,7 @@ function sortProductsByPriceHighToLow(product1, product2) {
 app.get('/products/sort/price-high-to-low', (req, res) => {
   let sortedProducts = products.slice();
   sortedProducts.sort(sortProductsByPriceHighToLow);
-  res.json(sortedProducts);
+  res.json({ products: sortedProducts });
 });
 
 // Endpoint 3: Get the products sorted by “low-to-high” price
@@ -258,7 +258,7 @@ function sortProductsByPriceLowToHigh(product1, product2) {
 app.get('/products/sort/price-low-to-high', (req, res) => {
   let sortedProducts = products.slice();
   sortedProducts.sort(sortProductsByPriceLowToHigh);
-  res.json(sortedProducts);
+  res.json({ products: sortedProducts });
 });
 
 // Endpoint 4: Filter the products based on the “RAM” option.
