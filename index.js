@@ -236,8 +236,7 @@ function sortProductsByPopularity(product1, product2) {
   return product2.rating - product1.rating;
 }
 app.get('/products/sort/popularity', (req, res) => {
-  let sortedProducts = products.slice();
-  sortedProducts.sort(sortProductsByPopularity);
+  let sortedProducts = products.sort(sortProductsByPopularity);
   res.json({ products: sortedProducts });
 });
 
