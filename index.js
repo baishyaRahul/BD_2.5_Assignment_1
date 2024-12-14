@@ -287,7 +287,9 @@ function filterByBrand(product, brand) {
 }
 app.get('/products/filter/brand', (req, res) => {
   let brand = req.query.brand;
-  let sortedProducts = products.filter((product) => filterByBrand(product, brand));
+  let sortedProducts = products.filter((product) =>
+    filterByBrand(product, brand)
+  );
   res.json({ products: sortedProducts });
 });
 
@@ -308,17 +310,14 @@ function filterByPrice(product, price) {
 
 app.get('/products/filter/price', (req, res) => {
   let price = req.query.price;
-  let sortedProducts = products.filter((product) => filterByPrice(product, price));
+  let sortedProducts = products.filter((product) =>
+    filterByPrice(product, price)
+  );
   res.json({ products: sortedProducts });
 });
 
-// Endpoint 9: Send original array of products
-function getProducts() {
-  return products;
-}
 app.get('/products', (req, res) => {
-  let sortedProducts = getProducts();
-  res.json({ products: sortedProducts });
+  res.json(products);
 });
 
 app.listen(port, () => {
